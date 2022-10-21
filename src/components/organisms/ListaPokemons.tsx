@@ -34,17 +34,19 @@ export const ListaPokemons = () => {
   return (
     <div>        
         {cargando ? (<p>Estoy cargando espere un momento...</p>) : (
-          <ol>
-            {pokemons &&
-              pokemons.map((pokemon, index) => (
-                <ItemPokemon
-                  key={pokemon.id}
-                  pokemon={pokemon}   
-                />
-              ))}
-          </ol>          
+          <>
+            <ol>
+              {pokemons &&
+                pokemons.map((pokemon, index) => (
+                  <ItemPokemon
+                    key={pokemon.id}
+                    pokemon={pokemon}   
+                  />
+                ))}
+            </ol>        
+            <p><a href={resourse?.previous}>Previous</a> -- <a href={resourse?.next}>Next</a></p>  
+          </>          
         )}
-        <p><a href={resourse?.previous}>Previous</a> -- <a href={resourse?.next}>Next</a></p>
     </div>
   )
 }
